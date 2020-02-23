@@ -1,0 +1,6 @@
+<% @questions.each do |question|%>
+  <tr>
+    <td style="word-break: break-all;"><%= question.try(:question_name) %></td> 
+    <td><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i> Open'.html_safe,  "#", method: :delete,:class=>"btn btn-sm btn-green question", data: {confirm: 'Are you sure to open this question?' }%></td>
+  </tr>
+<%end%>

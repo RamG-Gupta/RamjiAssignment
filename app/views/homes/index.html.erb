@@ -1,0 +1,18 @@
+<% if logged_in? %>
+  <table class="table table-hover table-bordered table-striped" style="width:100%;height:100%;">
+    <tr>
+    	<th>Question Title</th>
+      <th>Action</th>
+    </tr>
+    <%= render "partial_questions_item", :renderer => BootstrapPagination::Rails %> 
+  </table>
+  <%= will_paginate @questions %>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to the Sample App</h1>
+    <p>Ruby on Rails sample application.</p>
+    <%= link_to "Sign up now!", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </div> 
+<% end %>
+
